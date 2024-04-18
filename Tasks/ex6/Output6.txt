@@ -1,0 +1,206 @@
+cnap@pcfeib425b:~$ sudo apt install sshpass && mkdir POS; mkdir POS/Tasks;mkdir POS/Tasks/ex6;touch POS/Tasks/ex6/Output6.txt; gedit POS/Tasks/ex6/Output6.txt &
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libudev1:i386
+Use 'sudo apt autoremove' to remove it.
+The following NEW packages will be installed:
+  sshpass
+0 upgraded, 1 newly installed, 0 to remove and 215 not upgraded.
+Need to get 10.5 kB of archives.
+After this operation, 30.7 kB of additional disk space will be used.
+Get:1 http://cz.archive.ubuntu.com/ubuntu bionic/universe amd64 sshpass amd64 1.06-1 [10.5 kB]
+Fetched 10.5 kB in 0s (284 kB/s)   
+Selecting previously unselected package sshpass.
+(Reading database ... 290838 files and directories currently installed.)
+Preparing to unpack .../sshpass_1.06-1_amd64.deb ...
+Unpacking sshpass (1.06-1) ...
+Setting up sshpass (1.06-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+[1] 8253
+cnap@pcfeib425b:~$ firefox --private-window facebook.com,login.szn.cz
+[Parent 9175, Gecko_IOThread] WARNING: pipe error (77): Connection reset by peer: file /build/firefox-gS7uvX/firefox-69.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9175, Gecko_IOThread] WARNING: pipe error (104): Connection reset by peer: file /build/firefox-gS7uvX/firefox-69.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+cnap@pcfeib425b:~$ firefox --private-window facebook.com &
+[2] 9379
+cnap@pcfeib425b:~$ 
+(/usr/lib/firefox/firefox:9527): dconf-WARNING **: 08:16:38.571: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ arp -an
+? (158.196.135.85) at 00:23:ae:9c:45:9f [ether] on eth0
+? (158.196.135.65) at 00:23:34:55:a4:00 [ether] on eth0
+cnap@pcfeib425b:~$ 
+(/usr/lib/firefox/firefox:9431): dconf-WARNING **: 08:17:52.674: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ sudo arp -d 
+arp: need host name
+cnap@pcfeib425b:~$ arp -v
+Address                  HWtype  HWaddress           Flags Mask            Iface
+pcfeib425t.vsb.cz        ether   00:23:ae:9c:45:9f   C                     eth0
+_gateway                 ether   00:23:34:55:a4:00   C                     eth0
+Entries: 2	Skipped: 0	Found: 2
+cnap@pcfeib425b:~$ sudo arp -s 
+arp: need host name
+cnap@pcfeib425b:~$ ping -s 50000 www.vsb.cz
+PING www.vsb.cz(www-a1.vsb.cz (2001:718:1001:100::80)) 50000 data bytes
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=1 ttl=62 time=9.44 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=2 ttl=62 time=9.35 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=3 ttl=62 time=9.44 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=4 ttl=62 time=9.43 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=5 ttl=62 time=9.46 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=6 ttl=62 time=9.54 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=7 ttl=62 time=9.46 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=8 ttl=62 time=9.40 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=9 ttl=62 time=9.29 ms
+50008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=10 ttl=62 time=9.49 ms
+^C
+--- www.vsb.cz ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 9.299/9.433/9.549/0.139 ms
+cnap@pcfeib425b:~$ ping -s 50000 www.vsb.cz -4 -n 5
+PING 5 (0.0.0.5) 50000(50068) bytes of data.
+^C
+--- 5 ping statistics ---
+10 packets transmitted, 0 received, 100% packet loss, time 9205ms
+
+cnap@pcfeib425b:~$ ping -s 50000 www.vsb.cz -4 -c 5
+PING webapproach.vsb.cz (158.196.0.83) 50000(50028) bytes of data.
+50008 bytes from www-a3.vsb.cz (158.196.0.83): icmp_seq=1 ttl=62 time=9.16 ms
+50008 bytes from www-a3.vsb.cz (158.196.0.83): icmp_seq=2 ttl=62 time=15.0 ms
+50008 bytes from www-a3.vsb.cz (158.196.0.83): icmp_seq=3 ttl=62 time=8.95 ms
+50008 bytes from www-a3.vsb.cz (158.196.0.83): icmp_seq=4 ttl=62 time=9.05 ms
+50008 bytes from www-a3.vsb.cz (158.196.0.83): icmp_seq=5 ttl=62 time=9.30 ms
+
+--- webapproach.vsb.cz ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 8.954/10.313/15.091/2.394 ms
+cnap@pcfeib425b:~$ ping -s 100000 www.vsb.cz -4 -c 5
+Error: packet size 100000 is too large. Maximum is 65507
+cnap@pcfeib425b:~$ ping -s 100000 www.vsb.cz  -c 5
+PING www.vsb.cz(www-a1.vsb.cz (2001:718:1001:100::80)) 100000 data bytes
+ping: local error: Message too long, mtu=1500
+ping: local error: Message too long, mtu=1500
+ping: local error: Message too long, mtu=1500
+ping: local error: Message too long, mtu=1500
+ping: local error: Message too long, mtu=1500
+
+--- www.vsb.cz ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4088ms
+
+cnap@pcfeib425b:~$ ping -s 10000 www.vsb.cz  -c 5
+PING www.vsb.cz(www-a1.vsb.cz (2001:718:1001:100::80)) 10000 data bytes
+10008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=1 ttl=62 time=2.55 ms
+10008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=2 ttl=62 time=2.40 ms
+10008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=3 ttl=62 time=2.47 ms
+10008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=4 ttl=62 time=2.46 ms
+10008 bytes from www-a1.vsb.cz (2001:718:1001:100::80): icmp_seq=5 ttl=62 time=2.51 ms
+
+--- www.vsb.cz ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 2.404/2.482/2.556/0.080 ms
+cnap@pcfeib425b:~$ ping
+Usage: ping [-aAbBdDfhLnOqrRUvV64] [-c count] [-i interval] [-I interface]
+            [-m mark] [-M pmtudisc_option] [-l preload] [-p pattern] [-Q tos]
+            [-s packetsize] [-S sndbuf] [-t ttl] [-T timestamp_option]
+            [-w deadline] [-W timeout] [hop1 ...] destination
+Usage: ping -6 [-aAbBdDfhLnOqrRUvV] [-c count] [-i interval] [-I interface]
+             [-l preload] [-m mark] [-M pmtudisc_option]
+             [-N nodeinfo_option] [-p pattern] [-Q tclass] [-s packetsize]
+             [-S sndbuf] [-t ttl] [-T timestamp_option] [-w deadline]
+             [-W timeout] destination
+cnap@pcfeib425b:~$ ping  www.vsb.cz  -c 5 -4 -T tsaddronly
+Invalid timestamp type
+cnap@pcfeib425b:~$ ping  www.vsb.cz  -c 5 -4 -T 
+ping: option requires an argument -- 'T'
+Usage: ping [-aAbBdDfhLnOqrRUvV64] [-c count] [-i interval] [-I interface]
+            [-m mark] [-M pmtudisc_option] [-l preload] [-p pattern] [-Q tos]
+            [-s packetsize] [-S sndbuf] [-t ttl] [-T timestamp_option]
+            [-w deadline] [-W timeout] [hop1 ...] destination
+Usage: ping -6 [-aAbBdDfhLnOqrRUvV] [-c count] [-i interval] [-I interface]
+             [-l preload] [-m mark] [-M pmtudisc_option]
+             [-N nodeinfo_option] [-p pattern] [-Q tclass] [-s packetsize]
+             [-S sndbuf] [-t ttl] [-T timestamp_option] [-w deadline]
+             [-W timeout] destination
+cnap@pcfeib425b:~$ ping  www.vsb.cz  -c 5 -4 -T tsaddr
+Invalid timestamp type
+cnap@pcfeib425b:~$ ping  www.vsb.cz  -c 5 -4 -T tsandaddr
+PING webapproach.vsb.cz (158.196.0.83) 56(124) bytes of data.
+
+--- webapproach.vsb.cz ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4082ms
+
+cnap@pcfeib425b:~$ ping  homel.vsb.cz  -c 5 -4 -T tsandaddr
+PING homel.vsb.cz (158.196.149.67) 56(124) bytes of data.
+
+--- homel.vsb.cz ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4082ms
+
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ tracert www.seznam.cz
+
+Command 'tracert' not found, did you mean:
+
+  command 'tracert6' from deb ndisc6
+  command 'tracer' from deb pvm-dev
+
+Try: sudo apt install <deb name>
+
+cnap@pcfeib425b:~$ traceroute www.seznam.cz
+traceroute to www.seznam.cz (77.75.74.176), 30 hops max, 60 byte packets
+ 1  _gateway (158.196.135.65)  1.730 ms * *
+ 2  158.196.99.73 (158.196.99.73)  0.461 ms  0.436 ms  0.398 ms
+ 3  195.113.113.113 (195.113.113.113)  2.202 ms  3.064 ms  2.452 ms
+ 4  195.113.235.99 (195.113.235.99)  7.990 ms  7.988 ms  7.972 ms
+ 5  * * *
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *^C
+cnap@pcfeib425b:~$ traceroute www.scholar.google.com
+traceroute to www.scholar.google.com (172.217.23.228), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  158.196.99.73 (158.196.99.73)  0.456 ms  0.428 ms  0.390 ms
+ 3  195.113.113.113 (195.113.113.113)  1.914 ms  1.569 ms  2.158 ms
+ 4  195.113.235.109 (195.113.235.109)  9.575 ms  9.559 ms  9.532 ms
+ 5  r2-r93.cesnet.cz (195.113.157.70)  7.470 ms  7.457 ms  7.431 ms
+ 6  108.170.245.49 (108.170.245.49)  7.385 ms  7.386 ms  7.373 ms
+ 7  108.170.238.157 (108.170.238.157)  7.346 ms 108.170.238.155 (108.170.238.155)  7.431 ms  7.404 ms
+ 8  prg03s06-in-f4.1e100.net (172.217.23.228)  7.346 ms  7.270 ms  7.225 ms
+cnap@pcfeib425b:~$ 
+

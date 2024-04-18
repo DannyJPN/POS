@@ -1,0 +1,44 @@
+enable
+conf t
+hostname RC1
+interface e0
+	ip address 210.0.0.33 255.255.255.240
+	desc Hranice
+	no shutdown
+interface e1
+	ip address 210.0.0.49 255.255.255.240
+	desc Prerov
+	no shutdown
+interface s1
+	ip address 200.0.0.2 255.255.255.252
+	clock rate 64000
+	desc k_RB1
+	no shutdown
+interface s0
+	ip address 200.0.0.5 255.255.255.252
+	clock rate 64000
+	desc k_RC2
+	no shutdown
+exit
+
+router eigrp 1
+	network 200.0.0.0 0.0.0.255
+	network 210.0.0.0 0.0.0.255
+	redistribute connected 
+	redistribute static 
+	no auto-summary
+exit
+
+!ip route 120.0.0.0 255.255.255.192 200.0.0.26
+!ip route 121.0.0.0 255.255.255.224 200.0.0.30
+
+line vty 0 4
+	password cisco
+	login
+	exit
+enable password cisco
+
+exit
+
+copy run start
+

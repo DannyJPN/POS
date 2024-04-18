@@ -1,0 +1,85 @@
+cnap@pcfeib425b:~$ firefox 
+.adobe/            .gnome/            .mozilla/          Public/
+.android/          .gnome2/           Music/             .ssh/
+Arduino/           .gnome2_private/   .netbeans/         .swt/
+.arduino15/        .gnupg/            NetBeansProjects/  Templates/
+.cache/            .gradle/           .npm/              .thunderbird/
+.config/           .gvfs/             .nv/               tmp/
+.cordova/          .ionic/            .oracle_jre_usage/ Videos/
+.dbus/             .java/             Pictures/          .vscode/
+Desktop/           .jssc/             .pki/              .wicd/
+Documents/         .local/            Plocha/            .wireshark/
+Downloads/         .m2/               .plugman/          workspace/
+.gconf/            .macromedia/       pt/                
+cnap@pcfeib425b:~$ firefox --help
+Usage: firefox [ options ... ] [URL]
+       where options include:
+
+X11 options
+  --display=DISPLAY  X display to use
+  --sync             Make X calls synchronous
+  --g-fatal-warnings Make all warnings fatal
+
+Firefox options
+  -h or --help       Print this message.
+  -v or --version    Print Firefox version.
+  -P <profile>       Start with <profile>.
+  --profile <path>   Start with profile at <path>.
+  --migration        Start with migration wizard.
+  --ProfileManager   Start with ProfileManager.
+  --no-remote        Do not accept or send remote commands; implies
+                     --new-instance.
+  --new-instance     Open new instance, not a new window in running instance.
+  --UILocale <locale> Start with <locale> resources as UI Locale.
+  --safe-mode        Disables extensions and themes for this session.
+  --allow-downgrade  Allows downgrading a profile.
+  --MOZ_LOG=<modules> Treated as MOZ_LOG=<modules> environment variable,
+                     overrides it.
+  --MOZ_LOG_FILE=<file> Treated as MOZ_LOG_FILE=<file> environment variable,
+                     overrides it. If MOZ_LOG_FILE is not specified as an
+                     argument or as an environment variable, logging will be
+                     written to stdout.
+  --headless         Run without a GUI.
+  --save-recordings  Save recordings for all content processes to a directory.
+  --browser          Open a browser window.
+  --new-window <url> Open <url> in a new window.
+  --new-tab <url>    Open <url> in a new tab.
+  --private-window <url> Open <url> in a new private window.
+  --preferences      Open Preferences dialog.
+  --screenshot [<path>] Save screenshot to <path> or in working directory.
+  --window-size width[,height] Width and optionally height of screenshot.
+  --search <term>    Search <term> with your default search engine.
+  --setDefaultBrowser Set this app as the default browser.
+  --jsconsole        Open the Browser Console.
+  --jsdebugger       Open the Browser Toolbox.
+  --wait-for-jsdebugger Spin event loop until JS debugger connects.
+                     Enables debugging (some) application startup code paths.
+                     Only has an effect when `--jsdebugger` is also supplied.
+  --devtools         Open DevTools on initial load.
+  --start-debugger-server [ws:][ <port> | <path> ] Start the debugger server on
+                     a TCP port or Unix domain socket path. Defaults to TCP port
+                     6000. Use WebSocket protocol if ws: prefix is specified.
+  --recording <file> Record drawing for a given URL.
+  --recording-output <file> Specify destination file for a drawing recording.
+  --remote-debugger [<host>][:<port>]
+  --remote-debugging-port <port> Start the Firefox remote agent, which is 
+                     a low-level debugging interface based on the CDP protocol.
+                     Defaults to listen on localhost:9222.
+
+      -g or --debug          Start within debugger
+      -d or --debugger       Specify debugger to start with (eg, gdb or valgrind)
+      -a or --debugger-args  Specify arguments for debugger
+cnap@pcfeib425b:~$ touch POS/CVoutput.txt
+touch: cannot touch 'POS/CVoutput.txt': No such file or directory
+cnap@pcfeib425b:~$ mkdir POS
+cnap@pcfeib425b:~$ touch POS/CVoutput.txt
+cnap@pcfeib425b:~$ firefox --private-window dropbox.com/home/uni/vsb/vsb/bc_ivt_iii/S5/POS.rar
+^Y^Z
+[1]+  Stopped                 firefox --private-window dropbox.com/home/uni/vsb/vsb/bc_ivt_iii/S5/POS.rar
+cnap@pcfeib425b:~$ firefox --private-window dropbox.com/home/uni/vsb/vsb/bc_ivt_iii/S5/POS.rar &
+[2] 5778
+[1]   Killed                  firefox --private-window dropbox.com/home/uni/vsb/vsb/bc_ivt_iii/S5/POS.rar
+cnap@pcfeib425b:~$ 
+(/usr/lib/firefox/firefox:5831): dconf-WARNING **: 08:08:40.379: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+

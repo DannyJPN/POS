@@ -1,0 +1,59 @@
+enable
+conf t
+hostname RB2
+interface e0
+         ip address 210.0.0.113 255.255.255.240
+         desc Ostrava
+         no shutdown
+interface e1
+	ip address 50.0.0.1 255.255.255.0
+	desc DNS
+	no shutdown
+
+interface loopback 1
+	ip address 40.0.0.11 255.255.255.0
+	desc Telnet
+	no shutdown
+
+!!HTTP server - nova konfigurace 
+interface loopback 2
+	ip address 30.0.0.10 255.255.255.0
+	desc WWW Server
+	no shutdown
+	exit
+ip http server	
+
+!!Http server - stara konfigurace
+!ip route 30.0.0.10 255.255.255.255 50.0.0.12
+
+interface s0
+	ip address 200.0.0.13 255.255.255.252
+	clock rate 125000
+	desc k_RB1
+	no shutdown
+interface s1
+	ip address 200.0.0.10 255.255.255.252
+	clock rate 64000
+	desc k_RC2
+	no shutdown
+exit
+
+router eigrp 1
+	network 200.0.0.0 255.255.255.0
+	network 210.0.0.0 255.255.255.0
+	redistribute connected 
+	redistribute static 
+	no auto-summary
+exit
+
+line vty 0 4
+	password cisco
+	login
+	exit
+enable password cisco
+
+exit
+
+copy run start
+
+

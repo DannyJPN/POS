@@ -1,0 +1,801 @@
+
+
+
+         --- System Configuration Dialog ---
+
+Enable secret warning
+----------------------------------
+In order to access the device manager, an enable secret is required
+If you enter the initial configuration dialog, you will be prompted for the enable secret
+If you choose not to enter the intial configuration dialog, or if you exit setup without setting the enable secret,
+please set an enable secret using the following CLI in configuration mode-
+enable secret 0 <cleartext password>
+----------------------------------
+Would you like to enter the initial configuration dialog? [yes/no]: 
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: no
+Switch>
+Switch>
+Switch>enabkle
+Translating "enabkle"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+Switch>enable
+Switch#comnf   nfigura terminal
+               ^
+% Invalid input detected at '^' marker.
+
+Switch#configura terminal terminal e terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname swi   SW1
+SW1(config)#vlan ?
+  WORD      ISL VLAN IDs 1-4094
+  group     Create a vlan group
+  internal  internal VLAN
+
+SW1(config)#vlan 512        do show vlan 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+ --More--         
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+SW1(config)#do show vlan     tp
+show vtp
+% Incomplete command.
+
+SW1(config)#do show vtp mode
+show vtp mode
+         ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#^Z
+SW1#show v
+*Mar  1 00:20:31.489: %SYS-5-CONFIG_I: Configured from console by consoletp ?
+  counters   VTP statistics
+  devices    VTP3 domain device information
+  interface  VTP interface status and configuration
+  password   VTP password
+  status     VTP domain status
+
+SW1#show vtp configure terminala terminale terminalshow vtp          status
+VTP Version capable             : 1 to 3
+VTP version running             : 1
+VTP Domain Name                 : 
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0026.51b4.aa80
+Configuration last modified by 0.0.0.0 at 0-0-00 00:00:00
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 5
+Configuration Revision            : 0
+MD5 digest                        : 0x57 0xCD 0x40 0x65 0x63 0x59 0x47 0xBD 
+                                    0x56 0x9D 0x4A 0x3E 0xA5 0x69 0x35 0xBC 
+SW1#
+*Mar  1 00:21:57.774: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to up
+*Mar  1 00:21:58.781: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+*Mar  1 00:22:30.490: %LINK-3-UPDOWN: Interface GigabitEthernet0/2, changed state to up
+*Mar  1 00:22:31.496: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+SW1#
+SW1#
+SW1#v conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#vtp mode tr
+SW1(config)#vtp mode transparent 
+Setting device to VTP Transparent mode for VLANS.
+SW1(config)#vlan 1024
+SW1(config-vlan)#name Thor
+SW1(config-vlan)#ls
+                 ^
+% Invalid input detected at '^' marker.
+
+SW1(config-vlan)#exit
+SW1(config)#vlan512 n512n512 n 512
+SW1(config-vlan)#name Loki
+SW1(config-vlan)#do sh vE/lan     lan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+1024 Thor                             active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+ --More--         
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1024 enet  101024     1500  -      -      -        -    -        0      0   
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+SW1(config-vlan)#exit
+SW1(config)#exitdo sh vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gi0/1, Gi0/2
+512  Loki                             active    
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+1024 Thor                             active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+512  enet  100512     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+ --More--         
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+1024 enet  101024     1500  -      -      -        -    -        0      0   
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+SW1(config)#do sh vlan more
+sh vlan more
+         ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#do sh vlan more    all
+sh vlan all
+        ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#int range fa0/1 - fa0/ - fa0/ 5 - fa0/ - fa0/12         
+SW1(config-if-range)#swi
+SW1(config-if-range)#switchport m
+SW1(config-if-range)#switchport mode a
+SW1(config-if-range)#switchport mode access 
+SW1(config-if-range)#switchport mode access int range fa0/5        ,fa0/12
+SW1(config-if-range)#int range fa0/5,fa0/12switchport mode access 
+SW1(config-if-range)#switchport mode access             acc
+SW1(config-if-range)#switchport access  vl
+SW1(config-if-range)#switchport access  vlan 512
+SW1(config-if-range)#int range fa0/10,fa0/24
+SW1(config-if-range)#sw po a
+SW1(config-if-range)#sw po aging          m
+SW1(config-if-range)#sw mode a
+SW1(config-if-range)#sw mode access 
+SW1(config-if-range)#sw acc
+SW1(config-if-range)#sw access vla
+SW1(config-if-range)#sw access vlan 1024
+SW1(config-if-range)#exit
+SW1(config)#int range gi0/1,gi0/2
+SW1(config-if-range)#swi mode trunk
+SW1(config-if-range)#sw
+*Mar  1 00:32:32.272: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+*Mar  1 00:32:32.289: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to downi 
+% Incomplete command.
+
+SW1(config-if-range)#s
+*Mar  1 00:32:35.292: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+*Mar  1 00:32:35.308: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to upw 
+% Ambiguous command:  "s"
+SW1(config-if-range)#
+SW1(config-if-range)#sw
+SW1(config-if-range)#switchport 
+SW1(config-if-range)#switchport ?
+  access         Set access mode characteristics of the interface
+  autostate      Include or exclude this port from vlan link up calculation
+  backup         Set backup for the interface
+  block          Disable forwarding of unknown uni/multi cast addresses
+  host           Set port host
+  mode           Set trunking mode of the interface
+  nonegotiate    Device will not engage in negotiation protocol on this
+                 interface
+  port-security  Security related command 
+  priority       Set appliance 802.1p priority
+  protected      Configure an interface to be a protected port
+  trunk          Set trunking characteristics of the interface
+  voice          Voice appliance attributes
+
+SW1(config-if-range)#switchport tr
+SW1(config-if-range)#switchport trunk ?
+  allowed  Set allowed VLAN characteristics when interface is in trunking mode
+  native   Set trunking native characteristics when interface is in trunking
+           mode
+  pruning  Set pruning VLAN characteristics when interface is in trunking mode
+
+SW1(config-if-range)#switchport trunk allowee d 
+SW1(config-if-range)#switchport trunk allowed ?
+  vlan  Set allowed VLANs when interface is in trunking mode
+
+SW1(config-if-range)#switchport trunk allowed vl
+SW1(config-if-range)#switchport trunk allowed vlan 512,1024
+SW1(config-if-range)#
+SW1(config-if-range)#
+SW1(config-if-range)#
+SW1(config-if-range)#
+SW1(config-if-range)#do shvlan vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/6, Fa0/7, Fa0/8, Fa0/9
+                                                Fa0/11, Fa0/13, Fa0/14, Fa0/15
+                                                Fa0/16, Fa0/17, Fa0/18, Fa0/19
+                                                Fa0/20, Fa0/21, Fa0/22, Fa0/23
+512  Loki                             active    Fa0/5, Fa0/12
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+1024 Thor                             active    Fa0/10, Fa0/24
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+512  enet  100512     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+ --More--         
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1024 enet  101024     1500  -      -      -        -    -        0      0   
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+SW1(config-if-range)#do sh vlanswitchport trunk allowed vlan 512,1024,1
+SW1(config-if-range)#sh dtp
+                        ^
+% Invalid input detected at '^' marker.
+
+SW1(config-if-range)#exit
+SW1(config)#show d?
+% Unrecognized command
+SW1(config)#show d ?
+% Unrecognized command
+SW1(config)#show      exit
+SW1#sh
+*Mar  1 00:36:52.814: %SYS-5-CONFIG_I: Configured from console by consoleow D?
+dampening  data-corruption  debugging  derived-config
+dhcp       dot1x            dtp        
+
+SW1#show D dtp
+Global DTP information
+	Sending DTP Hello packets every 30 seconds
+	Dynamic Trunk timeout is 300 seconds
+	7 interfaces using DTP
+SW1#show dtp ?
+  interface  DTP interface status
+  |          Output modifiers
+  <cr>
+
+SW1#show dtp i
+SW1#show dtp interface gi01 /1
+DTP information for GigabitEthernet0/1:
+  TOS/TAS/TNS:                              TRUNK/ON/TRUNK
+  TOT/TAT/TNT:                              802.1Q/802.1Q/802.1Q
+  Neighbor address 1:                       C0626BEBCF99
+  Neighbor address 2:                       000000000000
+  Hello timer expiration (sec/state):       17/RUNNING
+  Access timer expiration (sec/state):      never/STOPPED
+  Negotiation timer expiration (sec/state): never/STOPPED
+  Multidrop timer expiration (sec/state):   never/STOPPED
+  FSM state:                                S6:TRUNK
+  # times multi & trunk                     0
+  Enabled:                                  yes
+  In STP:                                   no
+
+  Statistics
+  ----------
+  34 packets received (34 good)
+  0 packets dropped
+      0 nonegotiate, 0 bad version, 0 domain mismatches, 
+      0 bad TLVs, 0 bad TAS, 0 bad TAT, 0 bad TOT, 0 other
+  54 packets output (54 good)
+      33 native, 21 software encap isl, 0 isl hardware native
+  0 output errors
+ --More--           0 trunk timeouts
+  1 link ups, last link up on Mon Mar 01 1993, 00:21:55
+  0 link downs
+
+SW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#int range fa0/1-fa0/24,gi0/1,gi0/2
+                            ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#int range fa0/1-fa0/24,gi0/1,gi0/2 a0/24,gi0/1,gi0/2~ a0/24,gi0/1,gi0/2 ~ a0/24,gi0/1,gi0/2~ ~ a0/24,gi0/1,gi0/2~ ~ a0/24,gi0/1,gi0/2~ ~ a0/24,gi0/1,gi0/2~ ~ a0/24,gi0/1,gi0/2 ~ a0/24,gi0/1,gi0/2  ~ a0/24,gi0/1,gi0/2  ~ a0/24,gi0/1,gi0/2  ~ a0/24,gi0/1,gi0/2  ~ a0/24,gi0/1,gi0/2  ~ a0/24,gi0/1,gi0/2 a0/24,gi0/1,gi0/2 a0/24,gi0/1,gi0/2 fa0/24,gi0/1,gi0/2 fa0/24,gi0/1,gi0/2 - fa0/24,gi0/1,gi0/2
+                              ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#int range fa0/1 - fa0/24,gi0/1,gi0/2/24,gi0/1,gi0/2            
+                              ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#int range fa0/1 - fa0/24fa0/24 -fa0/24 
+                            ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#int range fa0/1-fa0/24fa0/24 24 24 24 
+SW1(config-if-range)#swit
+SW1(config-if-range)#switchport oneg    noneg
+SW1(config-if-range)#switchport nonegotiate 
+Command rejected: Conflict between 'nonegotiate' and 'dynamic' status.
+% Range command terminated because it failed on FastEthernet0/1
+SW1(config-if-range)#switchport nonegotiate int range fa0/1-24             fi0/1-2
+                                ^
+% Invalid input detected at '^' marker.
+
+SW1(config)#int range fi0/1-2i0/1-2 gi0/1-2
+SW1(config-if-range)#swp 
+SW1(config-if-range)#switchport nen  one
+SW1(config-if-range)#switchport nonegotiate 
+SW1(config-if-range)#do show dtp
+Global DTP information
+	Sending DTP Hello packets every 30 seconds
+	Dynamic Trunk timeout is 300 seconds
+	7 interfaces using DTP
+SW1(config-if-range)#do show dtp int
+SW1(config-if-range)#do show dtp interface gi0/1
+DTP information for GigabitEthernet0/1:
+  TOS/TAS/TNS:                              TRUNK/NONEGOTIATE/TRUNK
+  TOT/TAT/TNT:                              802.1Q/802.1Q/802.1Q
+  Neighbor address 1:                       C0626BEBCF99
+  Neighbor address 2:                       000000000000
+  Hello timer expiration (sec/state):       never/STOPPED
+  Access timer expiration (sec/state):      never/STOPPED
+  Negotiation timer expiration (sec/state): never/STOPPED
+  Multidrop timer expiration (sec/state):   never/STOPPED
+  FSM state:                                S6:TRUNK
+  # times multi & trunk                     0
+  Enabled:                                  yes
+  In STP:                                   no
+
+  Statistics
+  ----------
+  39 packets received (38 good)
+  1 packets dropped
+      1 nonegotiate, 0 bad version, 0 domain mismatches, 
+      0 bad TLVs, 0 bad TAS, 0 bad TAT, 0 bad TOT, 0 other
+  58 packets output (58 good)
+      37 native, 21 software encap isl, 0 isl hardware native
+  0 output errors
+ --More--           0 trunk timeouts
+  1 link ups, last link up on Mon Mar 01 1993, 00:21:55
+  0 link downs
+
+SW1(config-if-range)#int range fa0/1-24
+SW1(config-if-range)#sw mo ac
+SW1(config-if-range)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SW1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*Mar  1 00:51:05.574: %SYS-5-CONFIG_I: Configured from console by console
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>
+SW1>do    enable
+SW1#show int
+Vlan1 is up, line protocol is up 
+  Hardware is EtherSVI, address is 0026.51b4.aac0 (bia 0026.51b4.aac0)
+  MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive not supported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:00:45, output 00:47:36, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     164 packets input, 29577 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     54 packets output, 18090 bytes, 0 underruns
+     0 output errors, 0 interface resets
+     0 output buffer failures, 0 output buffers swapped out
+FastEthernet0/1 is up, line protocol is up (connected) 
+  Hardware is Fast Ethernet, address is 0026.51b4.aa81 (bia 0026.51b4.aa81)
+ --More--           MTU 1500 bytes, BW 100000 Kbit, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, media type is 10/100BaseTX
+  input flow-control is off, output flow-control is unsupported 
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:00, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     102 packets input, 15451 bytes, 0 no buffer
+     Received 68 broadcasts (22 multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 22 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     2342 packets output, 199936 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 babbles, 0 late collision, 0 deferred
+ --More--         
+SW1#shwo swi
+SW1#shwo swi
+SW1#shwo swi      ow swi
+SW1#show swi
+SW1#show swi?
+% Unrecognized command
+SW1#show swi   in
+SW1#show inter
+SW1#show interfaces ?
+  Async              Async interface
+  Auto-Template      Auto-Template interface
+  BVI                Bridge-Group Virtual Interface
+  CTunnel            CTunnel interface
+  Dialer             Dialer interface
+  FastEthernet       FastEthernet IEEE 802.3
+  Filter             Filter interface
+  Filtergroup        Filter Group interface
+  GigabitEthernet    GigabitEthernet IEEE 802.3z
+  GroupVI            Group Virtual interface
+  Loopback           Loopback interface
+  Null               Null interface
+  Port-channel       Ethernet Channel of interfaces
+  Portgroup          Portgroup interface
+  Pos-channel        POS Channel of interfaces
+  Tunnel             Tunnel interface
+  Vif                PGM Multicast Host interface
+  Virtual-Template   Virtual Template interface
+  Virtual-TokenRing  Virtual TokenRing
+  Vlan               Catalyst Vlans
+  accounting         Show interface accounting
+  capabilities       Show interface capabilities information
+ --More--           counters           Show interface counters
+  crb                Show interface routing/bridging info
+  dampening          Show interface dampening info
+  debounce           Show interface debounce time info
+  description        Show interface description
+  etherchannel       Show interface etherchannel information
+  fair-queue         Show interface Weighted Fair Queueing (WFQ) info
+  fcpa               Fiber Channel
+  flowcontrol        Show interface flowcontrol information
+  irb                Show interface routing/bridging info
+  mac-accounting     Show interface MAC accounting info
+  mpls-exp           Show interface MPLS experimental accounting info
+  mtu                Show interface mtu
+  precedence         Show interface precedence accounting info
+  pruning            Show interface trunk VTP pruning information
+  random-detect      Show interface Weighted Random Early Detection (WRED) info
+  rate-limit         Show interface rate-limit info
+  stats              Show interface packets & octets, in & out, by switching
+                     path
+  status             Show interface line status
+  summary            Show interface summary
+  switchport         Show interface switchport information
+  transceiver        Show interface transceiver
+ --More--         
+SW1#show interfaces swi
+SW1#show interfaces switchport ?
+  backup  Show interface backup
+  module  Limit display to interfaces on module
+  |       Output modifiers
+  <cr>
+
+SW1#show interfaces switchport 
+Name: Fa0/1
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+ --More--         Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Appliance trust: none
+
+Name: Fa0/2
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+ --More--         
+SW1#show interfaces switchport | grep Negotiation
+                                 ^
+% Invalid input detected at '^' marker.
+
+SW1#show interfaces switchport | grep Negotiation grep Negotiation 
+                                ^
+% Invalid input detected at '^' marker.
+
+SW1#show interfaces switchport  grep Negotiation   grep Negotiation|  grep Negotiation ~ grep Negotiation~ grep Negotiation~ grep Negotiation~ grep Negotiation grep Negotiation  grep Negotiation  grep Negotiation  grep Negotiation grep Negotiation  grep Negotiation  Negotiation  Negotiation  Negotiation i Negotiation
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+Negotiation of Trunking: Off
+ --More--         Negotiation of Trunking: Off
+ --More--         Negotiation of Trunking: Off
+ --More--         Negotiation of Trunking: Off
+ --More--         SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#show vtp
+% Incomplete command.
+
+SW1#show vtp ?
+  counters   VTP statistics
+  devices    VTP3 domain device information
+  interface  VTP interface status and configuration
+  password   VTP password
+  status     VTP domain status
+
+SW1#show vtp 
+% Incomplete command.
+
+SW1#show vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 1
+VTP Domain Name                 : 
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0026.51b4.aa80
+Configuration last modified by 0.0.0.0 at 0-0-00 00:00:00
+
+Feature VLAN:
+--------------
+VTP Operating Mode                : Transparent
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 6
+Configuration Revision            : 0
+MD5 digest                        : 0x99 0x53 0x6F 0xAA 0x5D 0x03 0xD8 0x7E 
+                                    0xED 0xB7 0x39 0x83 0xDF 0xB3 0x46 0xF0 
+SW1#spanning-tree vlan 1
+      ^
+% Invalid input detected at '^' marker.
+
+SW1#spanning-tree vlan 1~show 
+      ^
+% Invalid input detected at '^' marker.
+
+SW1#spanning-tree vlan 1~show       sspanning-tree vlan 1hspanning-tree vlan 1ospanning-tree vlan 1wspanning-tree vlan 1 spanning-tree vlan 1
+
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32769
+             Address     001e.7995.0c00
+             Cost        4
+             Port        26 (GigabitEthernet0/2)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0026.51b4.aa80
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Fa0/1               Desg FWD 19        128.1    P2p 
+Gi0/1               Desg FWD 4         128.25   P2p 
+Gi0/2               Root FWD 4         128.26   P2p 
+
+
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#
+SW1#

@@ -1,0 +1,17 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	600
+@	IN	SOA	a.ns. root.localhost. (
+			      2		; Serial
+			    600		; Refresh
+			  86400		; Retry
+			   3600		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	a.ns.pcfeib425b.vsb.cz.
+@	IN	A	158.196.135.67
+
+
+$ORIGIN	135.196.158..in-addr.arpa
+66	PTR	a.ns.testeb4a.cs.vsb.cz

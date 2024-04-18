@@ -1,0 +1,29 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	600
+@	IN	SOA	pcfeib425b.vsb.cz. root.localhost. (
+			      2		; Serial
+			    600		; Refresh
+			  86400		; Retry
+			   3600		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	pcfeib425b.vsb.cz.
+@	IN	A	158.196.135.67
+@	IN	AAAA	fe80::baca:3aff:fea1:18bd
+@	IN	MX	1 smtp.vsb.cz
+
+
+www	IN	CNAME	pcfeib425a.vsb.cz.
+
+
+$ORIGIN weby
+www2	IN	CNAME	pcfeib425a.vsb.cz.
+pcfeib425a.vsb.cz.	A	158.196.135.66
+		TXT	Neighbor
+
+$ORIGIN pcfeib425a.vsb.cz.
+
+be	NS	pcfeib425a.vsb.cz.
+pcfeib425a.vsb.cz.	A	158.196.135.66

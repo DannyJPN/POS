@@ -1,0 +1,11 @@
+access-list 101 permit udp any host 1.1.1.1 eq 53
+access-list 101 permit tcp 172.18.0.0 0.0.0.255 host 1.1.1.1 eq 443 
+access-list 101 deny tcp 172.18.0.0 0.0.0.255 host 1.1.1.1 eq 80
+access-list 101 permit tcp host 172.18.0.10 201.0.113.0 0.0.0.3 eq 23
+access-list 101 permit icmp  172.18.0.0 0.0.0.15 host 201.0.113.2 echo-reply
+
+access-list 102 deny ip 172.18.0.0 0.0.0.255 any 
+access-list 102 permit udp host 1.1.1.1 any eq 53
+access-list 102 permit tcp host 1.1.1.1 eq 443 172.18.0.0 0.0.0.255  established
+access-list 102 permit tcp 201.0.113.0 0.0.0.3 eq 23 host 172.18.0.10 
+access-list 102 permit icmp host 201.0.113.2 172.18.0.0 0.0.0.15 echo

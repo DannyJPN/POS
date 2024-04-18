@@ -1,0 +1,149 @@
+int gi0/0
+ipv6 addr 2001:db8:0:10::1/64
+
+int gi0/1
+ipv6 addr 2001:db8:0:30::1/64
+
+int gi0/2
+ipv6 addr 2001:db8:0:1::1/64
+
+
+int gi0/0
+ipv6 addr 2001:db8:0:40::1/64
+
+int gi0/1
+ipv6 addr 2001:db8:0:30::2/64
+
+int gi0/2
+ipv6 addr 2001:db8:0:2::1/64
+
+
+
+int gi0/0
+ipv6 addr 2001:db8:0:20::1/64
+
+int gi0/1
+ipv6 addr 2001:db8:0:10::1/64
+
+int gi0/2
+ipv6 addr 2001:db8:0:3::1/64
+
+
+
+int gi0/0
+ipv6 addr 2001:db8:0:20::2/64
+
+int gi0/1
+ipv6 addr 2001:db8:0:40::2/64
+
+int gi0/2
+ipv6 addr 2001:db8:0:4::1/64
+
+
+
+router rip
+ver 2
+no auto
+red stat
+red con
+net 10.0.0.0
+pas def
+no passi gi0/0
+no passi gi0/1
+
+
+
+router ospf 1
+pas def
+net 10.0.0.8 0.0.0.3 area 0
+net 10.0.2.0 0.0.0.255 area 0
+net 10.0.0.12 0.0.0.3 area 0
+no pas gi0/0
+no pas gi0/1
+red st subnets 
+red con sub
+
+router ospf 1
+pas def
+net 10.0.0.0 0.0.0.3 area 0
+net 10.0.3.0 0.0.0.255 area 0
+net 10.0.0.4 0.0.0.3 area 0
+no pas gi0/0
+no pas gi0/1
+red st subnets 
+red con sub
+
+router ospf 1
+pas def
+net 10.0.0.8 0.0.0.3 area 0
+net 10.0.4.0 0.0.0.255 area 0
+net 10.0.0.4 0.0.0.3 area 0
+no pas gi0/0
+no pas gi0/1
+red st subnets 
+red con sub
+
+
+
+
+ipv6 uni
+ipv6 router rip RIP
+red st 
+red con me 1
+exit
+
+int  gi0/0
+ipv6 rip RIP en
+
+
+int  gi0/1
+ipv6 rip RIP en
+exit
+
+ipv6 router ospf 1
+red con metric 1
+red st
+pas def
+no pas gi0/0
+no pas gi0/1
+exit
+
+int gi0/0
+ipv6 ospf 1 area 0
+
+int gi0/1
+ipv6 ospf 1 area 0
+
+int gi0/2
+ipv6 ospf 1 area 0
+
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

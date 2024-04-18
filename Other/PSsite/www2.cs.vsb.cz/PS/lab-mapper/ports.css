@@ -1,0 +1,172 @@
+#ports
+{
+  background-color: white;
+  position: relative;
+  width: 640px;
+  height: 640px;
+}
+
+#ports #blackboard
+{
+	border: 1px solid black;
+	border-radius: 2px;
+  background-color: #303030;
+  margin: 0px 15px;
+  width: 200px;
+  padding: 5px;
+  color: white;
+}
+
+#ports .table
+{
+	border: 1px solid #d0d0d0;
+  background-color: #fafafa;
+  margin: 15px;
+  width: 468px;
+  padding: 5px;
+  padding-right: 0px;
+  color: black;
+}
+
+#ports hr
+{
+  display: block;
+  clear: both;
+  height: 0px;
+  border: none;
+}
+
+#ports .table .pc
+{
+	border: 1px solid #d0d0d0;
+	border-radius: 4px;
+  background-color: #f0f0f0;
+  margin-right: 5px;
+  float: left;
+  width: 100px;
+  padding: 5px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+
+#ports .table .pc.active
+{
+	border-color: #80dd80;
+  background-color: #d0ffd0;
+}
+
+#ports .panel
+{
+	border: 1px solid silver;
+	border-radius: 15px 15px 0px 0px;
+  background-color: white;
+  margin: 5px 69px;
+  width: 490px;
+  padding: 5px;
+  color: black;
+}
+
+#ports .panel .port
+{
+	border: 2px solid #e0e0e0;
+	border-radius: 15px 15px 0px 0px;
+  background-color: #eeeeee;
+  margin: 3px;
+  float: left;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  color: white;
+  cursor: pointer;
+}
+
+#ports .panel .port.active
+{
+	border-color: #80dd80;
+  background-color: #d0ffd0;
+}
+
+#ports .panel .port.space
+{
+  margin-right: 10px;
+}
+
+#ports #info
+{
+  text-align: center;
+  padding: 10px;
+}
+
+#ports .racks
+{
+  background-color: #f0f0f0;
+  margin: 5px 70px;
+  width: 490px;
+  padding: 5px;
+  color: gray;
+}
+
+#ports .racks .rack
+{
+	border: 2px solid white;
+	border-radius: 10px;
+	border-right-color: silver;
+	border-bottom-color: silver;
+  background-color: #f0f0f0;
+  margin: 4px;
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  color: gray;
+  font-size: 24px;
+  line-height: 90px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#ports .racks .rack.active
+{
+	border-left-color: silver;
+	border-top-color: silver;
+	border-right-color: white;
+	border-bottom-color: white;
+  background-color: #d0ffd0;
+	color: black;
+}
+
+#ports .patch
+{
+  background-color: #f0f0f0;
+  margin: 0px;
+  width: 624px;
+  margin: 3px;
+  padding: 5px;
+  color: black;
+}
+
+#ports .patch .slot
+{
+	border: 1px solid gray;
+	border-top: 3px solid #404040;
+	border-radius: 2px;
+  background-color: #f0f0f0;
+  margin: 1px;
+  float: left;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  color: gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+#ports .patch .slot.active
+{
+	border-color: #80dd80;
+	border-top-width: 1px;
+	border-bottom-width: 3px;
+  background-color: #d0ffd0;
+  color: black;
+}

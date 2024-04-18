@@ -1,0 +1,44 @@
+enable
+conf t
+hostname RB1
+interface e0
+	ip address 210.0.0.1 255.255.255.240
+	desc Karvina
+	no shutdown
+interface e1
+	ip address 210.0.0.17 255.255.255.240
+	desc Frydek
+	no shutdown
+interface s0
+	ip address 200.0.0.1 255.255.255.252
+	clock rate 64000
+	desc k_RC1
+	no shutdown
+interface s1
+	ip address 200.0.0.14 255.255.255.252
+	clock rate 125000
+	desc k_RB2
+	no shutdown
+exit
+
+router eigrp 1
+	network 210.0.0.0 0.0.0.255
+	network 200.0.0.0 0.0.0.255
+	redistribute connected 
+	redistribute static 
+	no auto-summary
+exit
+
+!ip route 110.0.0.0 255.255.255.0 200.0.0.18
+!ip route 111.0.0.0 255.255.255.128 200.0.0.22
+
+line vty 0 4
+	password cisco
+	login
+	exit
+enable password cisco
+
+exit
+
+copy run start
+

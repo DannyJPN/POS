@@ -1,0 +1,12 @@
+zone "testEB4b.cs.vsb.cz" {
+	type master;
+	file "/etc/bind/db.testEB425b";
+};
+
+
+zone "135.196.158.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.135.196.158";
+};
+
+

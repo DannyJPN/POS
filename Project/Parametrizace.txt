@@ -1,0 +1,11 @@
+Parametrizace: Moravec-2019_8
+Firma: uicoi
+Číslo topologie: H
+Čísla VLAN: VLAN A=58, VLAN B=74, VLAN C=90
+Počty stanic na segmentech: VLAN A=21, VLAN B=10
+Rozsah veřejných adres: 145.31.151.0/24
+Rozsah privátních adres: 192.168.36.160/27
+Rozsah IPv6 adres: 2001:782F:5C01:e000::/52
+Zvláštní segmenty: NAT: VLAN A,DNS: VLAN B(PC2B),DHCP: VLAN B,T: VLAN B,N: VLAN B
+NAT pool: 9
+Směrovací protokol: RIP

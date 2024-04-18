@@ -1,0 +1,183 @@
+cnap@pcfeib425b:~$ ssh -l kru0142 linedu.vsb.cz
+kru0142@linedu.vsb.cz's password: 
+Permission denied, please try again.
+kru0142@linedu.vsb.cz's password: 
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-65-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+10 packages can be updated.
+0 updates are security updates.
+
+*** System restart required ***
+Last login: Thu Oct 17 08:43:27 2019 from 2001:718:1001:230:3149:8d8a:81da:467
+kru0142@linedu:~$ ls
+allsizes.csv  Documents  mcuxpresso  Pictures  Public	  Videos
+Desktop       Downloads  Music	     POS       Templates
+kru0142@linedu:~$ ls POS
+Project  Tasks
+kru0142@linedu:~$ ls POS/Tasks/ex5
+Output5.txt
+kru0142@linedu:~$ exit
+logout
+Connection to linedu.vsb.cz closed.
+cnap@pcfeib425b:~$ ping 10.0.1.1
+PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.
+^C
+--- 10.0.1.1 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2039ms
+
+cnap@pcfeib425b:~$ ping 10.0.1.1 -c 10
+PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.
+^C
+--- 10.0.1.1 ping statistics ---
+10 packets transmitted, 0 received, 100% packet loss, time 9194ms
+
+cnap@pcfeib425b:~$ ping --help
+ping: invalid option -- '-'
+Usage: ping [-aAbBdDfhLnOqrRUvV64] [-c count] [-i interval] [-I interface]
+            [-m mark] [-M pmtudisc_option] [-l preload] [-p pattern] [-Q tos]
+            [-s packetsize] [-S sndbuf] [-t ttl] [-T timestamp_option]
+            [-w deadline] [-W timeout] [hop1 ...] destination
+Usage: ping -6 [-aAbBdDfhLnOqrRUvV] [-c count] [-i interval] [-I interface]
+             [-l preload] [-m mark] [-M pmtudisc_option]
+             [-N nodeinfo_option] [-p pattern] [-Q tclass] [-s packetsize]
+             [-S sndbuf] [-t ttl] [-T timestamp_option] [-w deadline]
+             [-W timeout] destination
+cnap@pcfeib425b:~$ ping 10.0.1.1
+PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.
+^C
+--- 10.0.1.1 ping statistics ---
+8 packets transmitted, 0 received, 100% packet loss, time 7175ms
+
+cnap@pcfeib425b:~$ ping 10.0.1.1
+PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.
+64 bytes from 10.0.1.1: icmp_seq=1 ttl=255 time=0.278 ms
+^[[A64 bytes from 10.0.1.1: icmp_seq=2 ttl=255 time=0.334 ms
+^C
+--- 10.0.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1013ms
+rtt min/avg/max/mdev = 0.278/0.306/0.334/0.028 ms
+cnap@pcfeib425b:~$ ping 10.0.0.1
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=255 time=0.324 ms
+64 bytes from 10.0.0.1: icmp_seq=2 ttl=255 time=0.310 ms
+64 bytes from 10.0.0.1: icmp_seq=3 ttl=255 time=0.302 ms
+^C
+--- 10.0.0.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2029ms
+rtt min/avg/max/mdev = 0.302/0.312/0.324/0.009 ms
+cnap@pcfeib425b:~$ ip route
+default via 158.196.135.65 dev eth0 
+10.0.0.0/8 via 10.0.1.1 dev eth1 proto static metric 100 
+10.0.1.0/24 dev eth1 proto kernel scope link src 10.0.1.6 metric 100 
+158.196.135.64/26 dev eth0 proto kernel scope link src 158.196.135.67 
+169.254.0.0/16 dev eth1 scope link metric 1000 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ ping 10.0.2.10
+PING 10.0.2.10 (10.0.2.10) 56(84) bytes of data.
+64 bytes from 10.0.2.10: icmp_seq=1 ttl=62 time=0.586 ms
+64 bytes from 10.0.2.10: icmp_seq=2 ttl=62 time=0.626 ms
+64 bytes from 10.0.2.10: icmp_seq=3 ttl=62 time=0.634 ms
+^C
+--- 10.0.2.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2041ms
+rtt min/avg/max/mdev = 0.586/0.615/0.634/0.029 ms
+cnap@pcfeib425b:~$ ping 10.0.4.10
+PING 10.0.4.10 (10.0.4.10) 56(84) bytes of data.
+.^C
+--- 10.0.4.10 ping statistics ---
+10 packets transmitted, 0 received, 100% packet loss, time 9207ms
+
+cnap@pcfeib425b:~$ ip -6 a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 2001:db8:4:0:4443:7b2b:3742:15ee/64 scope global temporary dynamic 
+       valid_lft 604133sec preferred_lft 85153sec
+    inet6 2001:db8:4:0:250:b6ff:fe22:8618/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591995sec preferred_lft 604795sec
+    inet6 fe80::250:b6ff:fe22:8618/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+cnap@pcfeib425b:~$ ping 2001:db8:4::1
+PING 2001:db8:4::1(2001:db8:4::1) 56 data bytes
+64 bytes from 2001:db8:4::1: icmp_seq=1 ttl=64 time=2.26 ms
+64 bytes from 2001:db8:4::1: icmp_seq=2 ttl=64 time=0.610 ms
+^C
+--- 2001:db8:4::1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 0.610/1.436/2.262/0.826 ms
+cnap@pcfeib425b:~$ ip -6 a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 2001:718:1001:230:90c2:cc78:d804:ed7f/64 scope global temporary dynamic 
+       valid_lft 604750sec preferred_lft 86327sec
+    inet6 2001:718:1001:230:baca:3aff:fea1:18bd/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591996sec preferred_lft 604796sec
+    inet6 fe80::baca:3aff:fea1:18bd/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+cnap@pcfeib425b:~$ ping 10.0.4.10
+PING 10.0.4.10 (10.0.4.10) 56(84) bytes of data.
+^C
+--- 10.0.4.10 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1031ms
+
+cnap@pcfeib425b:~$ ping 2001:db8:4::1
+PING 2001:db8:4::1(2001:db8:4::1) 56 data bytes
+^C
+--- 2001:db8:4::1 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3072ms
+
+cnap@pcfeib425b:~$ ping 2001:db8:4::1
+PING 2001:db8:4::1(2001:db8:4::1) 56 data bytes
+64 bytes from 2001:db8:4::1: icmp_seq=1 ttl=64 time=2.09 ms
+64 bytes from 2001:db8:4::1: icmp_seq=2 ttl=64 time=0.605 ms
+^C
+--- 2001:db8:4::1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 0.605/1.352/2.099/0.747 ms
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ ping 2001:db8:7::1
+PING 2001:db8:7::1(2001:db8:7::1) 56 data bytes
+64 bytes from 2001:db8:7::1: icmp_seq=1 ttl=63 time=0.859 ms
+64 bytes from 2001:db8:7::1: icmp_seq=2 ttl=63 time=0.759 ms
+^C
+--- 2001:db8:7::1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1012ms
+rtt min/avg/max/mdev = 0.759/0.809/0.859/0.050 ms
+cnap@pcfeib425b:~$ ping 2001:db8:5::1
+PING 2001:db8:5::1(2001:db8:5::1) 56 data bytes
+64 bytes from 2001:db8:5::1: icmp_seq=1 ttl=63 time=0.953 ms
+^C
+--- 2001:db8:5::1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.953/0.953/0.953/0.000 ms
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ 
+cnap@pcfeib425b:~$ ip -6 a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 2001:db8:4:0:4443:7b2b:3742:15ee/64 scope global temporary dynamic 
+       valid_lft 604253sec preferred_lft 85273sec
+    inet6 2001:db8:4:0:250:b6ff:fe22:8618/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591983sec preferred_lft 604783sec
+    inet6 fe80::250:b6ff:fe22:8618/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+cnap@pcfeib425b:~$ 
+
